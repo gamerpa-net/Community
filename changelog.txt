@@ -1,0 +1,56 @@
+Adjusted the AdminCP live search to look for search strings within the name and email address (instead of only at the beginning) for sites with less than 1,000,000 members.
+Improved error reporting for unexpected exceptions in some cases when manually running tasks.
+Upgraded CKEditor to 4.11.3.
+Added some AdminCP live search keywords for the Icons & Logos page.
+Adjusted search results processing to automatically clear out invalid results when detected.
+Adjusted comment and item widgets to restrict by the last year to prevent slow performance.
+Fixed an issue where the leaderboard may not correctly rebuild.
+Fixed an issue where searched terms may not be highlighted on the search results page when using Elasticsearch.
+Fixed being unable to reach the last page of search results with Elasticsearch.
+Fixed an issue where users could encounter an error by logging in with a new social account after already associating with a social account.
+Fixed mobile PWA manifest file not being accessible to guests when guests are required to login to use the site.
+Fixed an issue where javascript would not load due to a bug in the 3rd party Howler library.
+Fixed an issue where the prune members background task may stall if it encounters a staff account.
+Fixed an issue where email link tracking may not apply to all bulk mails sent.
+Fixed an edge case issue where it was possible for the lazy load rebuild to affect embedded videos.
+Fixed an upgrade issue that can occur if you have more than one of the same email address specified for upgrade notifications.
+Fixed an issue where imported members accounts were not marked as completed.
+Fixed an issue where changing the warning type on the warning form would not toggle the 'remove points never' checkbox to the correct value
+Fixed an issue where profile fields display HTML code when applying custom formatting.
+Fixed an issue where the upgrader could link to an incorrect theme when reporting theme conflicts.
+Fixed an issue with the upgrade now link on the front-end notification banner.
+Fixed an issue where the display name filter wouldn't store the "either" option.
+Fixed images with uppercase extensions not launching the lightbox correctly.
+Fixed an issue where page styling is lost temporarily when clicking "Check Again" on the support tool in the AdminCP.
+Fixed an issue with comment widgets where editing them may not show the correctly selected date range.
+Core REST API
+Fixed an error adding a member to a club through the REST API.
+Excluded archived topics from email digests.
+Fixed an issue where post counts for forums may be incorrect if archiving is used.
+Fixed an issue where merging two topics may show the topic at the wrong position in the forum listing.
+Prevented a possible infinite redirect problem when merging two topics simultaneously with each other.
+Applied group name formatting to member names in topics when viewed on a phone.
+Removed redirect forums from fluid view.
+Fixed an error upgrading Gallery when there are orphaned albums.
+Fixed guests being able to post comments without permission to do so.
+Fixed blog entry ratings not displaying.
+Fixed a minor display issue with blog ratings and tags when viewing blog entries.
+Improved the display and functionality of non-recurring subscription packages.
+Improved security of public endpoints that receive webhooks and other notifications from gateways.
+Fixed an issue where guests who cannot view the site cannot register if a subscription is required to be purchased during registration.
+Fixed not being able to check out through Braintree purchasing a subscription while using a credit card.
+Fixed upgrading of expired purchases resulting in account credit being issued.
+Fixed an issue where creating a subscription without renewal options would result in a error.
+Fixed an issue where deleting a subscription wouldn't delete the cover image.
+Fixed an issue where the recount background task would fail.
+Fixed an issue where the record revision list would show the same diff for each revision
+Fixed an HTML validation error with record comments.
+Fixed being unable to submit multiple files at once.
+Fixed an issue where Javascript/HTML may be stripped from code boxes in vB5.
+Fixed an issue where some data may not be converted when converting from SMF, Vanilla, ExpressionEngine.
+Fixed an issue where some converters may not be available for use (bbPress, Coppermine).
+Fixed an issue with SMF conversions where forums may not allow new posts following the conversion.
+Fixed guests being able to submit articles without permission to do so.
+Changes affecting third-party developers and designers
+Fixed an ErrorException occurring when a user receives their first PM during the instantNotifications AJAX polling.
+Adjusted the `Content\Item::_comments()` queries to not cause a MySQL Error when 3rd party code hooks into Comment::joins to add additional joins. 
